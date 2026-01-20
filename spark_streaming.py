@@ -41,7 +41,7 @@ def main():
         "MINIO_ANOMALY_PATH", f"s3a://{minio_bucket}/anomalies"
     )
     checkpoint_dir = os.getenv(
-        "CHECKPOINT_DIR", "/opt/spark-app/checkpoints/anomalies"
+        "CHECKPOINT_DIR", f"s3a://{minio_bucket}/checkpoints/anomalies"
     )
 
     spark = build_spark()
